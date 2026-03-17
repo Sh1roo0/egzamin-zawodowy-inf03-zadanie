@@ -35,7 +35,16 @@
             <h2>Standardowy</h2>
 
             <ul>
-                <li></li>
+                <?php
+                    $zapytanie3 = "SELECT abonamenty.nazwa, cechy.cecha FROM abonamenty INNER JOIN szczegolyabonamentu ON abonamenty.id = szczegolyabonamentu.Abonamenty_id INNER JOIN cechy ON szczegolyabonamentu.Cechy_id = cechy.id WHERE abonamenty.id = 1;";
+                    $wynik =  mysqli_query($polaczenie,$zapytanie3);
+                    
+                    while ($row = mysqli_fetch_array($wynik)){
+                    echo "<li>$row[1]</li>";
+                    
+                    }
+                    
+                ?>
             </ul>
         </section>
 
@@ -43,7 +52,7 @@
             <h2>Premium</h2>
 
             <ul>
-                <li></li>
+               
             </ul>
         </section>
 
@@ -51,7 +60,7 @@
             <h2>Dziecko</h2>
 
             <ul>
-                <li></li>
+                
             </ul>
         </section>
 
@@ -60,5 +69,8 @@
     <footer>    
         <p><img src="pliki3/obraz2.png" alt="przychodnia">Stronę przygotował: 0000000000</p>
     </footer>
+    <?php
+        mysqli_close($polaczenie);
+    ?>
 </body>
 </html>
