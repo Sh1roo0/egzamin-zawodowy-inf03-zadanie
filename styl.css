@@ -23,7 +23,7 @@ article{
     color: dimgray;
     font-size: 150%;
     height: 350px;
-    overflow: scroll;
+    overflow: auto;
 }
 section{
     background-color: #00E676;
@@ -40,7 +40,8 @@ section:hover{
 p:hover{
     color: black;
 }
-h2 h3{
+
+h3 ,h2{
     color: #1B5E20;
     text-align: center;
     letter-spacing: 3px;

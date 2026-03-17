@@ -8,12 +8,25 @@
     <link rel="stylesheet" href="styl.css">
 </head>
 <body>
+<?php
+    $polaczenie = mysqli_connect('localhost', 'root', '', 'medica');
+?>
     <header>
         <h1>Abonamenty w przychodni Medica</h1>
     </header>
 
     <article>
-
+        <?php
+            $zapytanie1 = "SELECT abonamenty.nazwa, abonamenty.cena, abonamenty.opis FROM abonamenty;";
+            $wynik =  mysqli_query($polaczenie,$zapytanie1);
+            if($wynik){
+                while ($row = mysqli_fetch_array($wynik)){
+                    echo "<h3>Pakiet $row[0] - cena $row[1] zł</h3>";
+                    echo "<p>$row[2]</p>";
+                }
+            }
+        ?>
+        <a href="opis.html">Dowiedz sie wiecej</a>
     </article>
 
     <main>
