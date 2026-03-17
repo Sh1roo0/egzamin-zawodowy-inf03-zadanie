@@ -52,7 +52,16 @@
             <h2>Premium</h2>
 
             <ul>
-               
+                <?php
+                    $zapytanie3 = "SELECT abonamenty.nazwa, cechy.cecha FROM abonamenty INNER JOIN szczegolyabonamentu ON abonamenty.id = szczegolyabonamentu.Abonamenty_id INNER JOIN cechy ON szczegolyabonamentu.Cechy_id = cechy.id WHERE abonamenty.id = 2;";
+                    $wynik =  mysqli_query($polaczenie,$zapytanie3);
+                    
+                    while ($row = mysqli_fetch_array($wynik)){
+                    echo "<li>$row[1]</li>";
+                    
+                    }
+                    
+                ?>
             </ul>
         </section>
 
